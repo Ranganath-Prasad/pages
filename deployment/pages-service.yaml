@@ -2,18 +2,18 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app:
-    servicefor:
-  name:
-  namespace:
+    app: pages
+    servicefor: pages
+  name: pages
+  namespace: ranganath
 spec:
   ports:
-  - port:
-    protocol:
-    targetPort:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
   selector:
-    app:
-    servicefor:
-  type: LoadBalancer
+    app: pages
+    servicefor: pages
+  type: NodePort
 status:
   loadBalancer: {}
