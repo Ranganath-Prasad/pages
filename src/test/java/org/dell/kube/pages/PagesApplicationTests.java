@@ -10,8 +10,4 @@ class PagesApplicationTests {
     void contextLoads() {
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class HomeController {
 
-<<<<<<< HEAD
     private String pageContent;
 
     public HomeController(@Value("${page.content}") String pageContent){
@@ -19,12 +18,6 @@ public class HomeController {
     @GetMapping
     public String getPage(){
         return "Hello from page : "+pageContent+" ";
-=======
-
-    @GetMapping
-    public String getPage(){
-        return "Hello from page : YellowPages";
->>>>>>> master
     }
 
 
