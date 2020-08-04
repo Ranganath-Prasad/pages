@@ -20,7 +20,7 @@ spec:
         servicefor: pages
     spec:
       containers:
-        - image: ranganath85/pages:1.0
+        - image: ranganath85/pages:latest
           imagePullPolicy: Always
           name: pages
           ports:
