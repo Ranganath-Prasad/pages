@@ -4,4 +4,4 @@ metadata:
   name: pages-config-map
   namespace: ranganath
 data:
-  PAGE_CONTENT: "Green-Pages coming from Yellow-world!"
+  PAGE_CONTENT: "Green-Pages changed from Yellow-world!"
