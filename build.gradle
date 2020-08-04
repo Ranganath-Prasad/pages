@@ -28,3 +28,11 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+bootRun.environment([
+		"PAGE_CONTENT": "YellowPagesConfig",
+])
+
+test.environment([
+		"PAGE_CONTENT": "YellowPagesConfig",
+])

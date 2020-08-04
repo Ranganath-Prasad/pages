@@ -13,6 +13,4 @@ public class HomeControllerTests {
 
         assertThat(controller.getPage()).contains(message);
     }
-
-
 }
