@@ -7,12 +7,12 @@
   * Assign **8080** to *targetPort* and *port*
   * Assign **TCP** to *protocol*
   * Assign the value **pages** to *app*, *servicefor* and *name*
-  * In metadata section add *namespace: \<your-name>*
+  * In metadata section add *namespace: \ranganath*
 - Fill the pages-deployment.yaml
   * Assign the value **pages** to *app*, *servicefor* and *name* 
   * Assign proper values for \<docker_username>/pages:kube for value of image.
-  * In metadata section add *namespace: \<your-name>* 
-- In all the above section replace \<your-name> with your own **first name**.
+  * In metadata section add *namespace: \ranganath* 
+- In all the above section replace \ranganath with your own **first name**.
 #### Instructions for the  application to be deployed in minikube for local testing
 *minikube* and *kubectl* must be installed in the local machine vm. To start *minikube* "minikube start" or "minikube start --driver=virtualbox/docker" could be executed in the terminal.
 - Change type in *pages-service.yaml* to *NodePort*
@@ -22,17 +22,17 @@ kubectl apply -f  deployment/pages-namespace.yaml
 kubectl apply -f deployment/pages-service.yaml
 kubectl apply -f deployment/pages-deployment.yaml
 ```
-- The above commands will create a namespace in the name \<your-name> and a deployment, service called pages under the same namespace.
+- The above commands will create a namespace in the name \ranganath and a deployment, service called pages under the same namespace.
 Verify the namespace, deployment and service are created by using the following command
 ```shell script
-kubectl get deployment pages --namespace <your-name>
-kubectl get service pages --namespace <your-name>
+kubectl get deployment pages --namespace ranganath
+kubectl get service pages --namespace ranganath
 ```
 - Below command would set your default namespace to the new namespace and we don't need to suffix --namespace in all commands
 ```shell script
-kubectl config set-context --current --namespace=<your-name>
+kubectl config set-context --current --namespace=ranganath
 ```
-- Execute the command "minikube service pages --namespace \<your-name>" and it would open the application in the browser.
+- Execute the command "minikube service pages --namespace \ranganath" and it would open the application in the browser.
 
 
 #### Instructions for the  application to be deployed in Enterprise PKS
@@ -56,12 +56,12 @@ kubectl apply -f deployment/pages-deployment.yaml
 ```
 - Verify the namespace, deployment and service are created by using the following command in the pks cluster
 ```shell script
-kubectl get deployment pages --namespace <your-name>
-kubectl get service pages --namespace <your-name>
+kubectl get deployment pages --namespace ranganath
+kubectl get service pages --namespace ranganath
 ```
 - Below command would set your default namespace to the new namespace and we don't need to suffix --namespace in all commands
 ```shell script
-kubectl config set-context --current --namespace=<your-name>
+kubectl config set-context --current --namespace=ranganath
 ```
 - Identify the external ip of the **pages** service from the output of "kubectl get service pages" command.
 - Open the pages url in http://external-ip:8080 to test the application

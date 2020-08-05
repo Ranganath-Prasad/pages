@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pages-config-map
+  namespace: ranganath
+data:
+  PAGE_CONTENT: "Green-Pages changed from Yellow-world!"

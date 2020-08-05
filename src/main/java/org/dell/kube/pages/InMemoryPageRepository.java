@@ -1,10 +1,13 @@
 package org.dell.kube.pages;
 
+import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+//@Repository
 public class InMemoryPageRepository implements IPageRepository{
     Map<Long,Page> repo = new HashMap<Long,Page>();
     long counter;

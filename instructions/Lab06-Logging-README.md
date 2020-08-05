@@ -82,7 +82,7 @@ metadata:
     app: pages
     servicefor: pages
   name: pages
-  namespace: <your-name>
+  namespace: ranganath
 spec:
   replicas: 1
   selector:

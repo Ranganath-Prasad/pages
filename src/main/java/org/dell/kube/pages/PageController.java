@@ -1,5 +1,7 @@
 package org.dell.kube.pages;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,11 +12,20 @@ import java.util.List;
 @RequestMapping("/pages")
 public class PageController {
 
+
     private IPageRepository pageRepository;
     public PageController(IPageRepository pageRepository)
     {
         this.pageRepository = pageRepository;
     }
+//
+//    @Autowired
+//    private IPageRepository pageRepository;
+////    public PageController(IPageRepository pageRepository)
+////    {
+////        this.pageRepository = pageRepository;
+////    }
+
     @PostMapping
     public ResponseEntity<Page> create(@RequestBody Page page) {
         Page newPage= pageRepository.create(page);

@@ -61,7 +61,7 @@ kubectl get service pages
 ```
 - Execute the below command to open the application url in browser
 ```shell script
-minikube service pages -n <your-name>
+minikube service pages -n ranganath
 ```
 This command will open the application url in browser. Through the swagger documentation execute the REST APIs.
 - Delete everything by using the below commands.
@@ -69,7 +69,7 @@ This command will open the application url in browser. Through the swagger docum
 kubectl delete pvc log-persistent-claim
 kubectl delete -f deployment/demo-pages-deploy-vol.yaml
 kubectl delete service pages
-kubectl delete ns <your-name>
+kubectl delete ns ranganath
 ```
 - Execute the below commands to push your code to remote github repository.
 ```shell script

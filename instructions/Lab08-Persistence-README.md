@@ -138,26 +138,26 @@ public IPageRepository iPageRepository(DataSource dataSource){
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql-volume-<your-name>
-  namespace: <your-name>
+  name: mysql-volume-ranganath
+  namespace: ranganath
   labels:
     type: local
 spec:
-  storageClassName: mysql-<your-name>
+  storageClassName: mysql-ranganath
   capacity:
     storage: 1Gi
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/mnt/data-<your-name>"
+    path: "/mnt/data-ranganath"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-volume-claim-<your-name>
-  namespace: <your-name>
+  name: mysql-volume-claim-ranganath
+  namespace: ranganath
 spec:
-  storageClassName: mysql-<your-name>
+  storageClassName: mysql-ranganath
   accessModes:
     - ReadWriteMany
   resources:
@@ -172,7 +172,7 @@ data:
 kind: Secret
 metadata:
   name: mysql-secret
-  namespace: <your-name>
+  namespace: ranganath
 ```
 - Create a new file called mysql-deployment.yaml in deployment folder
 ```yaml
@@ -180,7 +180,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: <your-name>
+  namespace: ranganath
 spec:
   replicas: 1
   selector:
@@ -208,17 +208,17 @@ spec:
               name: mysql
           volumeMounts:
             - name: mysql-storage
-              mountPath: "/var/lib/mysql-<your-name>"
+              mountPath: "/var/lib/mysql-ranganath"
       volumes:
         - name: mysql-storage
           persistentVolumeClaim:
-            claimName: mysql-volume-claim-<your-name>
+            claimName: mysql-volume-claim-ranganath
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: mysql
-  namespace: <your-name>
+  namespace: ranganath
 spec:
   ports:
     - port: 3306
@@ -229,7 +229,7 @@ spec:
 #sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
   #sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
 ```
-- Replace all the \<your-name> with your actual first name.
+- Replace all the \ranganath with your actual first name.
 - Ensure that a MySQL instance with no password for user root is running in local machine
 - Build, Test and Run the application locally by using the following commands
 ```shell script
@@ -277,7 +277,7 @@ git push origin persistence-work:master
 ```
 - Use the below command to set default namespace
 ```shell script
-kubectl config set-context --current --namespace=<your-name>
+kubectl config set-context --current --namespace=ranganath
 ```
 - Use the below command to connect to the mysql server and verify the schema and table
 ```shell script
