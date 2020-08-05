@@ -22,11 +22,11 @@ spec:
           name: mysql
           env:
             # Instead of using value directly we could also use secrets
-            - name: MYSQL_ROOT_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    name: mysql-secret
-                    key: mysql-pass
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                 key: mysql-pass
           ports:
             - containerPort: 3306
               name: mysql
